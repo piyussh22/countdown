@@ -1,0 +1,103 @@
+!DOCTYPE html>
+<html>
+<head>
+  <title>Birthday Countdown</title>
+  <style type="text/css">
+   body {
+        font-family:cursive;
+        background-color: lemonchiffon;
+        
+   }
+   .countdownContainer {
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translateX(-50%) translateY(-50%);
+       text-align: center;
+       background:bisque;
+       border: 1px solid#999;
+       padding: 10px;
+       box-shadow :0 0 5px 3px #ccc;
+   }
+   
+   .info {
+       font-size: 80px;
+   }
+
+  </style>
+</head>
+<body>
+    <table class="countdownContainer">
+        <tr class="info">
+            <td colspan="4">Countdown from today</td>
+        </tr>
+        <tr class="info">
+            <td id="days"></td>
+            <td id="hours"</td>
+            <td id="minutes"</td>
+            <td id="seconds"</td>
+        </tr>
+        <tr>
+            <td>Days</td>
+            <td>Hours</td>
+            <td>Minutes</td>
+            <td>Seconds</td>
+        </tr>
+    </table>
+    <center>   
+          
+       
+        <b> Enter Event Date To Start Countdown :<br> <input type=date id = DOB> </b>  
+        <span id = "message" style="color: blue"> </span> <br><br>    
+          
+       
+        <button type="submit" onclick = "Countdown()"> Countdown </button> <br><br>  
+        <h3 style="color:32A80F" id="result" align="center"></h3>   
+        </center>  
+
+    <script type="text/javascript">
+    
+     
+    function Countdown()
+    {
+        var userinput = document.getElementById("DOB").value;  
+     var dob = new Date(userinput);  
+      if(userinput==null || userinput=='') {  
+      document.getElementById("message").innerHTML = "**Choose a date please!";    
+      return false;   
+    } else {  
+        var now = new Date();
+        
+        
+        var eventDate = new Date(userinput);
+
+        var currentTime = now.getTime();
+        var eventTime = eventDate.getTime();
+        var remTime = eventTime - currentTime;
+
+        var s=Math.floor(remTime/1000);
+        var m = Math.floor(s/60);
+        var h = Math.floor(m/60);
+        var d = Math.floor(h/24);
+        h %= 24;
+        m %= 60;
+        s %= 60;
+
+        if(h<10)
+        { h = "0"+h; }
+        if(m<10)
+        { m = "0"+m; }
+        if(s<10)
+        { s = "0"+s; }
+
+        document.getElementById("days").innerText = d;
+        document.getElementById("hours").innerText = h;
+        document.getElementById("minutes").innerText = m;
+        document.getElementById("seconds").innerText = s;
+       setTimeout(Countdown, 1000);
+    }
+}
+   Countdown();
+    </script>
+</body>
+</html>
