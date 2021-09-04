@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Birthday Countdown</title>
+  <title>Countdown</title>
   <style type="text/css">
    body {
         font-family:cursive;
-        background-color: lemonchiffon;
+        background: linear-gradient(90deg, rgb(221, 221, 223) 0%, rgba(11, 186, 199, 0.995) 100%);
         
    }
    .countdownContainer {
        position: absolute;
-       top: 50%;
+       top: 60%;
        left: 50%;
        transform: translateX(-50%) translateY(-50%);
        text-align: center;
-       background:bisque;
+       background: linear-gradient(90deg, rgb(230, 232, 233) 0%, rgba(3, 124, 133, 0.995) 100%);
        border: 1px solid#999;
        padding: 10px;
        box-shadow :0 0 5px 3px #ccc;
@@ -23,6 +23,7 @@
    .info {
        font-size: 80px;
    }
+   
 
   </style>
 </head>
@@ -38,21 +39,21 @@
             <td id="seconds"</td>
         </tr>
         <tr>
-            <td>Days</td>
-            <td>Hours</td>
-            <td>Minutes</td>
-            <td>Seconds</td>
+            <td><b>Days</b></td>
+            <td><b>Hours</b></td>
+            <td><b>Minutes</b></td>
+            <td><b>Seconds</b></td>
         </tr>
     </table>
     <center>   
           
        
-        <b> Enter Event Date To Start Countdown :<br> <input type=date id = DOB> </b>  
-        <span id = "message" style="color: blue"> </span> <br><br>    
+        <b> Enter Event Date To Start Countdown :<br> <input type=date id = DOB> </b>  <br><br>
+        <span id = "message" style="color: rgb(248, 249, 250)"> </span> <br><br>    
           
        
-        <button type="submit" onclick = "Countdown()"> Countdown </button> <br><br>  
-        <h1 style="color:32A80F" id="result" align="center">PIYUSH DEVDA</h1>  <br>
+        <button type="submit" onclick = "Countdown()">Click to Start Countdown </button> <br><br>  
+        <h1 style="color:32A80F" id="result" align="center" > By PIYUSH DEVDA</h1>  <br>
         <h3 style="color: rebeccapurple"  align="center">Roll num 205120071</h3>
         </center>  
 
@@ -64,7 +65,7 @@
         var userinput = document.getElementById("DOB").value;  
      var dob = new Date(userinput);  
       if(userinput==null || userinput=='') {  
-      document.getElementById("message").innerHTML = "**Choose a date please!";    
+      document.getElementById("message").innerHTML = "Choose a date please !!";    
       return false;   
     } else {  
         var now = new Date();
